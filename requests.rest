@@ -1,0 +1,13 @@
+GET http://localhost:5000/api/products?page=2&limit=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2hhZGVlbiIsImlhdCI6MTc1NzE5NTQ3OH0.LGbZiqd0mK7c_ReyM75TIuzed3sKvSCRbxh6EZIH0aQ
+
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "Shadeen"
+}
+
+###
