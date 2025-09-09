@@ -6,7 +6,8 @@ import dotenv from "dotenv";
 import {authenticateToken} from "./other-functions/authenticateToken.js"
 import swaggerUi from "swagger-ui-express";
 import swaggerJsdoc from "swagger-jsdoc";
-
+import csvImportRoutes from "./routes/csvimport.route.js"
+//import {handleCsvUpload} from "./controllers/csvimport.controller.js"
 dotenv.config();
 
 /** */
@@ -42,8 +43,7 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // routes
 app.use("/login", loginRoutes)
 app.use("/api/products", authenticateToken, productRoutes);
-
-
+app.use("/api/csvimport",authenticateToken, csvImportRoutes);
 // health check
 app.get("/", (req, res) => res.send("API is up"));
 

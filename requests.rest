@@ -11,3 +11,16 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:5000/api/csvimport
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2hhZGVlbiIsImlhdCI6MTc1NzE5NTQ3OH0.LGbZiqd0mK7c_ReyM75TIuzed3sKvSCRbxh6EZIH0aQ
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="products.csv"
+Content-Type: text/csv
+
+< ./uploading/upload.csv
+--WebAppBoundary--
+
+###
+
