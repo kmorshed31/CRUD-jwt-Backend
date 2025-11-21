@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    container_name: backend1_api
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: "mongodb+srv://morshedshadeen:2WlW0oxjfjKK89b8@cluster0.gtkcucc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+      ACCESS_TOKEN_SECRET: 7059b797e1ca47e901d329896e00391bf2089186489760447cc7fb98d194a360f360f4f885b75d38edb905f8f0aae15a8bd953f7acb6d5f4644976dbc1cd5b9a
+
+      PORT: 5000
+    
+  

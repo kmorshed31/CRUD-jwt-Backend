@@ -56,14 +56,17 @@ app.get("/", (req, res) => res.send("API is up"));
 
 
 mongoose.connect("mongodb+srv://morshedshadeen:2WlW0oxjfjKK89b8@cluster0.gtkcucc.mongodb.net/Node-API?retryWrites=true&w=majority&appName=Cluster0")
-.then(()=>{
-    console.log("Connected to MongoDB");
-    app.listen(5000, () => {
-    console.log("Server is running on port 5000");
-});
-}).catch((err)=>{
-    console.log("Action failed", err);
-})
+    .then(() => {
+        console.log("Connected to MongoDB");
+        const PORT = process.env.PORT || 5000;
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.log("Action failed", err);
+    });
+// Use MONGO_URI from environment when available (keeps Docker/local setups working)
 // This is to make sure that we 
     //are connected to the database before starting the server
 
